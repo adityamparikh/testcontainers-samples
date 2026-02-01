@@ -3,12 +3,12 @@ package com.sivalabs.tcdemo.infra;
 import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.postgresql.PostgreSQLContainer;
 
 public class PostgresDatabaseContainerInitializer
         implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-    private static final PostgreSQLContainer<?> sqlContainer = new PostgreSQLContainer<>("postgres:17-alpine")
+    private static final PostgreSQLContainer sqlContainer = new PostgreSQLContainer("postgres:17-alpine")
             .withDatabaseName("integration-tests-db")
             .withUsername("sa")
             .withPassword("sa")
