@@ -3,6 +3,8 @@ package com.sivalabs.todolist;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.sivalabs.PostgresResource;
+import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;
@@ -11,7 +13,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 @QuarkusTest
-// @QuarkusTestResource(PostgresResource.class)
+@QuarkusTestResource(PostgresResource.class)
 class TodoControllerTest {
 
     @Test

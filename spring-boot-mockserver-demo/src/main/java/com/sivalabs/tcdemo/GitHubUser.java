@@ -34,11 +34,11 @@ public class GitHubUser {
     private String twitterUsername;
 
     @JsonProperty("public_repos")
-    private int publicRepos;
+    private Integer publicRepos;
 
-    private int followers;
+    private Integer followers;
 
-    private int following;
+    private Integer following;
 
-    private boolean hireable;
+    private Boolean hireable;
 }

@@ -3,7 +3,7 @@ package com.sivalabs.tcdemo;
 import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.testcontainers.containers.MockServerContainer;
+import org.testcontainers.mockserver.MockServerContainer;
 import org.testcontainers.utility.DockerImageName;
 
 public class MockServerContainerInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {

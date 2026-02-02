@@ -25,8 +25,20 @@
     <micronaut.aot.packageName>com.sivalabs.myapp.aot.generated</micronaut.aot.packageName>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <micronaut.runtime>netty</micronaut.runtime>
+    <testcontainers.version>2.0.3</testcontainers.version>
     <exec.mainClass>com.sivalabs.myapp.Application</exec.mainClass>
   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>testcontainers-bom</artifactId>
+        <version>${testcontainers.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <repositories>
     <repository>
@@ -107,6 +119,21 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>testcontainers</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>testcontainers-postgresql</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>testcontainers-jdbc</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-http-client</artifactId>
       <scope>test</scope>
@@ -145,6 +172,13 @@
         <artifactId>micronaut-maven-plugin</artifactId>
         <configuration>
           <configFile>aot-${packaging}.properties</configFile>
+          <testResourcesDependencies>
+            <dependency>
+              <groupId>org.testcontainers</groupId>
+              <artifactId>testcontainers-postgresql</artifactId>
+              <version>${testcontainers.version}</version>
+            </dependency>
+          </testResourcesDependencies>
         </configuration>
       </plugin>
       <plugin>

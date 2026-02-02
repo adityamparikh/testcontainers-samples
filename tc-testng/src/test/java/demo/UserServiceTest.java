@@ -4,7 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.sql.SQLException;
 import java.util.List;
-import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +16,7 @@ public class UserServiceTest {
 
     UserService userService;
 
-    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:17-alpine");
+    static PostgreSQLContainer postgres = new PostgreSQLContainer("postgres:17-alpine");
 
     @BeforeClass
     public static void beforeClass() throws SQLException {
