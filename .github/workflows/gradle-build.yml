@@ -1,0 +1,25 @@
+name: Gradle Build
+
+on:
+  workflow_dispatch:
+
+#  push:
+#    branches:
+#      - 'main'
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          java-version: 21
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Test
+        run: ./gradlew build

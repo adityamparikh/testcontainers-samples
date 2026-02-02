@@ -15,7 +15,7 @@ wiremock = "3.13.1"
 mockserver = "5.15.0"
 resilience4j = "2.3.0"
 spotless = "8.2.1"
-palantir-java-format = "2.73.0"
+palantir-java-format = "2.85.0"
 spring-cloud-aws = "4.0.0-RC1"
 jackson-module-kotlin = "3.0.0"
 
