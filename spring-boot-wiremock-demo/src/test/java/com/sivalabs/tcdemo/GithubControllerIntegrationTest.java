@@ -53,15 +53,13 @@ public class GithubControllerIntegrationTest {
         wireMockServer.stubFor(WireMock.get(urlMatching("/users/.*"))
                 .willReturn(aResponse()
                         .withHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)
-                        .withBody(
-                                """
+                        .withBody("""
 					{
 					"login": "%s",
 					"name": "K. Siva Prasad Reddy",
 					"twitter_username": "sivalabs",
 					"public_repos": 50
 					}
-					"""
-                                        .formatted(username))));
+					""".formatted(username))));
     }
 }

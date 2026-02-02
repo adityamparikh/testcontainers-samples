@@ -49,16 +49,14 @@ public class GithubControllerIntegrationTest {
                 .respond(response()
                         .withStatusCode(200)
                         .withHeaders(new Header("Content-Type", "application/json; charset=utf-8"))
-                        .withBody(json(
-                                """
+                        .withBody(json("""
 						{
 						"login": "%s",
 						"name": "K. Siva Prasad Reddy",
 						"twitter_username": "sivalabs",
 						"public_repos": 50
 						}
-						"""
-                                        .formatted(username))));
+						""".formatted(username))));
     }
 
     private void verifyMockServerRequest(String method, String path, int times) {

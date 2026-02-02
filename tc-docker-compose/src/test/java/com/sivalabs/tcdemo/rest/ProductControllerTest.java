@@ -66,11 +66,9 @@ class ProductControllerTest {
 
     @Test
     void shouldSaveProduct() throws Exception {
-        mockMvc.perform(
-                        post("/api/products/events")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .content(
-                                        """
+        mockMvc.perform(post("/api/products/events")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
 				    {
 				        "code": "p001",
 				        "name": "product-001",

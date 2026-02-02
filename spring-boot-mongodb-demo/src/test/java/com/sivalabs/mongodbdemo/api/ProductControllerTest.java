@@ -56,11 +56,9 @@ class ProductControllerTest {
 
     @Test
     void shouldSaveProduct() throws Exception {
-        mockMvc.perform(
-                        post("/api/products")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .content(
-                                        """
+        mockMvc.perform(post("/api/products")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
 				{
 				    "name": "test product",
 				    "description": "test product description",

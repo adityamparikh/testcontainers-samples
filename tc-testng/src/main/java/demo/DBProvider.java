@@ -24,8 +24,7 @@ public class DBProvider {
 
     void createUsersTable() throws SQLException {
         try (Connection conn = getConnection()) {
-            PreparedStatement pstmt = conn.prepareStatement(
-                    """
+            PreparedStatement pstmt = conn.prepareStatement("""
 					    create table users (
 					        id bigint not null,
 					        name varchar(100) not null,

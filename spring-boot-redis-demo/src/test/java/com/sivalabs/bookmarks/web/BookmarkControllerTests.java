@@ -81,11 +81,9 @@ class BookmarkControllerTests {
     @Test
     void shouldCreateBookmarkSuccessfully() throws Exception {
         this.mockMvc
-                .perform(
-                        post("/api/bookmarks")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .content(
-                                        """
+                .perform(post("/api/bookmarks")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
                                                 {
                                                     "title": "SivaLabs Blog",
                                                     "url": "https://sivalabs.in"
