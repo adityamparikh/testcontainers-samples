@@ -26,7 +26,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 @Testcontainers
-class ProductControllerIT {
+class ProductControllerTest {
 
     @Container
     static ComposeContainer compose = new ComposeContainer(new File("src/test/resources/docker-compose-test.yml"))
